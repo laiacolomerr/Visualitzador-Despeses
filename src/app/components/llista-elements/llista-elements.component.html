@@ -1,3 +1,11 @@
-<div *ngFor="let payment of payments" class="payment">
-  <targeta-element [payment]="payment"></targeta-element>
+<div
+  *ngIf="payments.length === 0; else paymentsGrid"
+  class="empty-list">
+  <span class="title">Error</span>
+  <span>No s'ha trobat cap resultat coincident amb la cerca.</span>
 </div>
+<ng-template #paymentsGrid>
+  <div *ngFor="let payment of payments" class="payment">
+    <targeta-element [payment]="payment"></targeta-element>
+  </div>
+</ng-template>
