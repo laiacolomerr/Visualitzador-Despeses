@@ -1,0 +1,63 @@
+<form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)" novalidate>
+  <div class="field">
+    <label for="name">Nom</label>
+
+    <input
+      id="name"
+      type="text"
+      name="name"
+      [(ngModel)]="nameValue"
+      #nameModel="ngModel"
+      required
+      minlength="3"
+      placeholder="Introdueix un nom"
+      autocomplete="off"
+      class="form-input"
+    />
+
+    <div *ngIf="nameModel.invalid && nameModel.touched" class="error">
+      <small *ngIf="nameModel.errors?.['required']">El nom és obligatori.</small>
+      <small *ngIf="nameModel.errors?.['minlength']">El nom ha de tenir com a mínim 3 caràcters.</small>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="date">Data</label>
+
+    <input
+      id="date"
+      type="date"
+      name="date"
+      [(ngModel)]="dateValue"
+      #dateModel="ngModel"
+      class="form-input"
+    />
+  </div>
+
+  <div class="field">
+    <label for="paymentMethod">Mètode de pagament</label>
+    <select
+      id="paymentMethod"
+      name="paymentMethod"
+      [(ngModel)]="paymentMethod"
+      #paymentModel="ngModel"
+      class="form-input"
+    >
+      <option value="all">Qualsevol</option>
+      <option value="bankTransfer">Transferència</option>
+      <option value="cash">Efectiu</option>
+      <option value="check">Xec</option>
+      <option value="creditCard">Targeta de crèdit</option>
+      <option value="debitCard">Targeta de dèbit</option>
+      <option value="paypal">PayPal</option>
+    </select>
+  </div>
+
+  <div class="buttons">
+    <button
+      type="submit"
+      [disabled]="searchForm.invalid">
+      Cercar
+    </button>
+  </div>
+</form>

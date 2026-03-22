@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { TargetaElementComponent } from "../targeta-element/targeta-element.component";
 import { CommonModule } from '@angular/common';
+
 import { Element } from '../../models/element.model';
+import { TargetaElementComponent } from "../targeta-element/targeta-element.component";
 
 @Component({
   selector: 'llista-elements',
