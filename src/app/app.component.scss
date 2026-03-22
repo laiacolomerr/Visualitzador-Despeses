@@ -1,0 +1,61 @@
+:host {
+  display: grid;
+  margin: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, auto); 
+
+  >.payment {
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 0.8rem;
+
+    >.title {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    >.payment-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      >.row,
+      >.col {
+        display: flex;
+
+        >.name {
+          font-weight: 500;
+        }
+      }
+
+      >.row {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      >.col {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1700px) {
+    grid-template-columns: repeat(3, auto); 
+  }
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, auto); 
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: auto; 
+  }
+}
