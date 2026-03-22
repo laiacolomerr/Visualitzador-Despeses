@@ -16,4 +16,6 @@ import { TargetaElementComponent } from "../targeta-element/targeta-element.comp
 })
 export class LlistaElementsComponent {
   @Input() payments: Element[] = [];
+
+  trackById(_i: number, payment: Element) { return payment.id; }
 }

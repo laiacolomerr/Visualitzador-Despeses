@@ -5,7 +5,7 @@
   <span>No s'ha trobat cap resultat coincident amb la cerca.</span>
 </div>
 <ng-template #paymentsGrid>
-  <div *ngFor="let payment of payments" class="payment">
+  <div *ngFor="let payment of payments; trackBy: trackById" class="payment">
     <targeta-element [payment]="payment"></targeta-element>
   </div>
 </ng-template>
