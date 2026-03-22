@@ -1,0 +1,19 @@
+:host {
+  display: grid;
+  margin: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, auto);
+
+  @media screen and (max-width: 1700px) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: auto;
+  }
+}
