@@ -1,7 +1,15 @@
+@use '@angular/material' as mat;
+@use './material-theme' as theme;
+
+html {
+  @include mat.all-component-themes(theme.$light-theme);
+}
+
 html, body {
   background-color: #eee;
   height: 100vh;
 }
+
 body {
   margin: 0;
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
