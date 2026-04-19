@@ -1,6 +1,6 @@
-import { Element } from "../models/element.model";
+import { PaymentApiResponse } from "../models/payment-api-response.model";
 
-export const PAYMENTS: Element[] = [
+export const PAYMENTS: PaymentApiResponse[] = [
   {
     id: 1,
     name: 'Llum març',

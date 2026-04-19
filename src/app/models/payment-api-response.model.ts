@@ -1,6 +1,6 @@
 import { PaymentMethod } from "./payment-method.type";
 
-export interface Element {
+export interface PaymentApiResponse {
     id: number;
     name: string;
     amount: number;

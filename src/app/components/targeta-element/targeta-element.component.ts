@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Element } from '../../models/element.model';
+import { PaymentApiResponse } from '../../models/payment-api-response.model';
 import { PaymentMethod } from '../../models/payment-method.type';
 import { CommonModule } from '@angular/common';
 
@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './targeta-element.component.scss'
 })
 export class TargetaElementComponent {
-  @Input() payment!: Element;
+  @Input() payment!: PaymentApiResponse;
 
   getPaymentMethodLabel(paymentMethod: PaymentMethod): string {
     switch (paymentMethod) {
