@@ -1,0 +1,107 @@
+{
+  "despeses": [
+    {
+      "id": 1,
+      "name": "Llum març",
+      "category": "subministraments",
+      "amount": 25.70,
+      "icon": "bolt",
+      "isRecurring": true,
+      "timestamp": 1771200000000,
+      "paymentMethod": "bankTransfer"
+    },
+    {
+      "id": 2,
+      "name": "Aigua març",
+      "category": "subministraments",
+      "amount": 22.08,
+      "icon": "water_drop",
+      "isRecurring": true,
+      "timestamp": 1770768000000,
+      "paymentMethod": "bankTransfer"
+    },
+    {
+      "id": 3,
+      "name": "Llum febrer",
+      "category": "subministraments",
+      "amount": 25.89,
+      "icon": "bolt",
+      "isRecurring": true,
+      "timestamp": 1768608000000,
+      "paymentMethod": "bankTransfer"
+    },
+    {
+      "id": 4,
+      "name": "Gas gener",
+      "category": "subministraments",
+      "amount": 22.37,
+      "icon": "propane_tank",
+      "isRecurring": true,
+      "timestamp": 1769731200000,
+      "paymentMethod": "bankTransfer"
+    },
+    {
+      "id": 5,
+      "name": "Matrícula IOC 2026",
+      "category": "estudis",
+      "amount": 150,
+      "icon": "school",
+      "isRecurring": false,
+      "timestamp": 1763164800000,
+      "paymentMethod": "debitCard",
+      "notes": "Primer semestre"
+    },
+    {
+      "id": 6,
+      "name": "Compra Caprabo",
+      "category": "supermercats",
+      "amount": 35.26,
+      "icon": "grocery",
+      "isRecurring": false,
+      "timestamp": 1762214400000,
+      "paymentMethod": "cash"
+    },
+    {
+      "id": 7,
+      "name": "Assegurança cotxe",
+      "category": "assegurances",
+      "amount": 526.14,
+      "icon": "directions_car",
+      "isRecurring": true,
+      "timestamp": 1761436800000,
+      "paymentMethod": "bankTransfer"
+    },
+    {
+      "id": 8,
+      "name": "Compra botes Decathlon",
+      "category": "tèxtil",
+      "amount": 78.99,
+      "icon": "apparel",
+      "isRecurring": false,
+      "timestamp": 1757548800000,
+      "paymentMethod": "paypal"
+    },
+    {
+      "id": 9,
+      "name": "Gas setembre",
+      "category": "subministraments",
+      "amount": 75.26,
+      "icon": "propane_tank",
+      "isRecurring": true,
+      "timestamp": 1756512000000,
+      "paymentMethod": "bankTransfer",
+      "notes": "Inclou revisió de la caldera"
+    },
+    {
+      "id": 10,
+      "name": "Roba El Corte Inglés",
+      "category": "tèxtil",
+      "amount": 62.98,
+      "icon": "apparel",
+      "isRecurring": false,
+      "timestamp": 1754870400000,
+      "paymentMethod": "cash",
+      "notes": "Pantalons i camisa tardor"
+    }
+  ]
+}
