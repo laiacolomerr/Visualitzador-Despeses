@@ -1,5 +1,21 @@
 <div class="title-container">
-  <span class="title">{{ payment.nom }}</span>
+  <div class="left">
+    @if(destacatsService.esDestacat(payment.id)) {
+      <button
+        mat-icon-button
+        (click)="destacatsService.eliminarDestacat(payment.id)">
+        <mat-icon fontSet="material-symbols-outlined" class="filled-symbol">star</mat-icon>
+      </button>
+    } @else {
+      <button
+        mat-icon-button
+        (click)="destacatsService.afegirDestacat(payment)">
+        <mat-icon fontSet="material-symbols-outlined">star</mat-icon>
+      </button>
+    }
+
+    <span class="title">{{ payment.nom }}</span>
+  </div>
   <mat-icon fontSet="material-symbols-outlined">{{ payment.icona }}</mat-icon>
 </div>
 

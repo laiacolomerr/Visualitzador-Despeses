@@ -1,9 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MatButtonModule } from '@angular/material/button'; 
 import { MatDividerModule } from '@angular/material/divider';
- import { MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
+import { DestacatsService } from '../../services/destacats.service';
 import { Pagament } from '../../models/pagament.model';
 import { PaymentMethod } from '../../models/payment-method.type';
 
@@ -12,6 +14,7 @@ import { PaymentMethod } from '../../models/payment-method.type';
   standalone: true,
   imports: [
     CommonModule,
+    MatButtonModule,
     MatDividerModule,
     MatIconModule,
   ],
@@ -20,6 +23,8 @@ import { PaymentMethod } from '../../models/payment-method.type';
 })
 export class TargetaElementComponent {
   @Input() payment!: Pagament;
+
+  public destacatsService = inject(DestacatsService);
 
   getPaymentMethodLabel(paymentMethod: PaymentMethod): string {
     switch (paymentMethod) {
