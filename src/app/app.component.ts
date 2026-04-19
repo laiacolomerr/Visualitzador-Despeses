@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 
 import { BarraCercaComponent } from "./components/barra-cerca/barra-cerca.component";
 import { LlistaElementsComponent } from "./components/llista-elements/llista-elements.component";
-import { PAYMENTS } from './mocks/dades.mock';
 import { GridFilter } from './models/grid-filter.model';
 
 @Component({
@@ -18,17 +17,17 @@ import { GridFilter } from './models/grid-filter.model';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  public payments = PAYMENTS;
+  public payments = [];
 
   onChangeGridFilter(gridFilter: GridFilter) {
     const { date, name, paymentMethod } = gridFilter;
 
-    this.payments = PAYMENTS.filter((payment) => {
-      if(name && !payment.name.toLowerCase().includes(name)) return false;
-      if(date && !this.datesAreEqual(date, payment.date)) return false;
-      if(paymentMethod && paymentMethod !== payment.paymentMethod) return false;
-      return true;
-    });
+    // this.payments = PAYMENTS.filter((payment) => {
+    //   if(name && !payment.name.toLowerCase().includes(name)) return false;
+    //   if(date && !this.datesAreEqual(date, payment.date)) return false;
+    //   if(paymentMethod && paymentMethod !== payment.paymentMethod) return false;
+    //   return true;
+    // });
   }
 
   private datesAreEqual(date1: Date, date2: Date) {
