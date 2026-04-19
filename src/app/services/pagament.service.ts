@@ -1,6 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, finalize, map, of } from 'rxjs';
+import { catchError, finalize, map, Observable, of } from 'rxjs';
 
 import { adaptarPagamentsApi } from '../adaptadors/pagament.adaptador';
 import { environment } from '../../environments/environment';
@@ -33,6 +33,16 @@ export class PagamentService {
     const termeCodificat = encodeURIComponent(terme);
     const url = `${ this.baseUrl }?name:contains=${ termeCodificat }`;
     this.carregarPagaments(url);
+  }
+
+  search(terme: string): Observable<PaymentApiResponse[]> {
+    if (!terme.trim()) {
+      return of([]);
+    }
+
+    const termeCodificat = encodeURIComponent(terme);
+    const url = `${ this.baseUrl }?name:contains=${ termeCodificat }`;
+    return this.http.get<PaymentApiResponse[]>(url);
   }
 
   private carregarPagaments(url: string): void {
