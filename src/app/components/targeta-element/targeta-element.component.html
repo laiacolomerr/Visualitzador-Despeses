@@ -1,4 +1,9 @@
-<span class="title">{{ payment.nom }}</span>
+<div class="title-container">
+  <span class="title">{{ payment.nom }}</span>
+  <mat-icon fontSet="material-symbols-outlined">{{ payment.icona }}</mat-icon>
+</div>
+
+<mat-divider></mat-divider>
 
 <div class="payment-info">
   <div class="row">
@@ -12,8 +17,22 @@
   </div>
 
   <div class="row">
+    <div class="name">Categoria</div>
+    <span>{{ payment.categoria | titlecase }}</span>
+  </div>
+
+  <div class="row">
     <div class="name">Mètode pagament</div>
     <span>{{ getPaymentMethodLabel(payment.metodePagament) }}</span>
+  </div>
+
+  <div class="row">
+    <div class="name">Recurrent</div>
+    @if(payment.esRecurrent) {
+      <mat-icon fontSet="material-symbols-outlined">check</mat-icon>
+    } @else {
+      <mat-icon fontSet="material-symbols-outlined">close</mat-icon>
+    }
   </div>
 
   <div *ngIf="payment.notes" class="col">

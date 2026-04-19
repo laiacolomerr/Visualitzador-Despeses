@@ -1,6 +1,9 @@
 import { Component, Input } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
+
+import { MatDividerModule } from '@angular/material/divider';
+ import { MatIconModule } from '@angular/material/icon';
+
 import { Pagament } from '../../models/pagament.model';
 import { PaymentMethod } from '../../models/payment-method.type';
 
@@ -8,7 +11,9 @@ import { PaymentMethod } from '../../models/payment-method.type';
   selector: 'targeta-element',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
+    MatDividerModule,
+    MatIconModule,
   ],
   templateUrl: './targeta-element.component.html',
   styleUrl: './targeta-element.component.scss'

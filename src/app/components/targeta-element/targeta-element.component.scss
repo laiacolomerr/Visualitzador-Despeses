@@ -10,9 +10,14 @@
   padding: 1.5rem;
   width: 100%;
 
-  >.title {
-    font-weight: 600;
-    font-size: 1.2rem;
+  >.title-container {
+    display: flex;
+    justify-content: space-between;
+
+    >.title {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
   }
 
   >.payment-info {
