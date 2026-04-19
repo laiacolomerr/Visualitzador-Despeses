@@ -1,10 +1,13 @@
 import { PaymentMethod } from "./payment-method.type";
 
 export interface PaymentApiResponse {
-    id: number;
-    name: string;
-    amount: number;
-    date: Date;
-    paymentMethod: PaymentMethod;
-    notes?: string;
+  id: string;
+  name: string;
+  category: string;
+  amount: number;
+  icon: string;
+  isRecurring: boolean;
+  timestamp: number;
+  paymentMethod: PaymentMethod;
+  notes?: string;
 }
