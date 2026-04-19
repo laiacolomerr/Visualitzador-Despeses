@@ -1,0 +1,49 @@
+<form
+  [formGroup]="searchFormulary"
+  (ngSubmit)="search()">
+  <div class="field-group">
+    <div class="field">
+      <label for="name">Nom</label>
+
+      <input
+        id="name"
+        type="text"
+        name="name"
+        formControlName="termeCerca"
+        placeholder="Introdueix un nom"
+        autocomplete="off"
+        class="form-input"
+      />
+
+      @if(termeInvalid) {
+        <div class="error">{{ missatgeError }}</div>
+      }
+    </div>
+
+    @if(mostrantSpinner) {
+      <div class="spinner-container">
+        <mat-icon
+          fontSet="material-symbols-outlined"
+          class="spinner">
+          progress_activity
+        </mat-icon>
+      </div>
+    }
+  </div>
+
+  <div class="buttons">
+    @if(mostrarBotoNetejar) {
+      <button
+        type="button"
+        (click)="clear()">
+        Netejar
+      </button>
+    }
+
+    <button
+      type="submit"
+      [disabled]="searchFormulary.invalid || termeControl?.pending">
+      Cercar
+    </button>
+  </div>
+</form>

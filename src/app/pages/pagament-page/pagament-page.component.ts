@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; 
 
-import { BarraCercaComponent } from '../../components/barra-cerca/barra-cerca.component';
+import { FormulariCercaComponent } from "../../components/formulari-cerca/formulari-cerca.component";
 import { LlistaElementsComponent } from '../../components/llista-elements/llista-elements.component';
 import { PagamentService } from '../../services/pagament.service';
 
@@ -12,12 +12,12 @@ import { PagamentService } from '../../services/pagament.service';
   selector: 'pagament-page',
   standalone: true,
   imports: [
-    BarraCercaComponent,
     CommonModule,
+    FormulariCercaComponent,
     LlistaElementsComponent,
     MatButtonModule,
     MatProgressSpinnerModule,
-  ],
+],
   templateUrl: './pagament-page.component.html',
   styleUrl: './pagament-page.component.scss'
 })
