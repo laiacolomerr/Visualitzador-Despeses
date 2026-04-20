@@ -1,0 +1,58 @@
+<div class="card title-container">
+  <span>Pagaments Destacats</span>
+  <span>{{ destacatsService.totalDestacats() }}</span>
+</div>
+
+@if(destacatsService.totalDestacats() === 0) {
+  <div class="card no-highlighed-container">
+    <span class="title">No hi ha cap pagament destacat</span>
+    <span class="text">Destaca'n un fent clic a l'estrella de la part superior esquerra de la targeta</span>
+  </div>
+} @else {
+  <form
+    [formGroup]="notesFormulary"
+    class="notes-container">
+    @for (highlightedPayment of destacatsService.destacats(); track $index; let paymentIndex = $index) {
+      <div class="card payment-card">
+        <span class="title">{{ highlightedPayment.nom }}</span>
+        
+        <mat-divider></mat-divider>
+        
+        @for (note of highlightedPayment.notes; track $index; let noteIndex = $index) {
+          <div class="note-container">
+            <span>{{note}}</span>
+            <button
+              mat-icon-button
+              (click)="destacatsService.eliminarNota(highlightedPayment.id, noteIndex)">
+              <mat-icon fontSet="material-symbols-outlined" class="filled-symbol">close</mat-icon>
+            </button>
+          </div>
+        }
+
+        <div class="input-container">
+          <div class="input-and-error">
+            <input
+              id="name"
+              type="text"
+              name="name"
+              [formControl]="getNoteIndex(paymentIndex)"
+              placeholder="Introdueix un nom"
+              autocomplete="off"
+              class="form-input"
+            />
+  
+            @if(getNoteValidatorError(paymentIndex)) {
+              <span class="error">Mínim 3 caràcters</span>
+            }
+          </div>
+
+          <button
+            mat-icon-button
+            (click)="addNote(highlightedPayment, $index)">
+            <mat-icon fontSet="material-symbols-outlined" class="filled-symbol">add</mat-icon>
+          </button>
+        </div>
+      </div>
+    }
+  </form>
+}
