@@ -9,5 +9,6 @@ export interface Pagament {
   esRecurrent: boolean;
   data: Date;
   metodePagament: PaymentMethod;
+  notes: string[];
   comentari?: string;
 }

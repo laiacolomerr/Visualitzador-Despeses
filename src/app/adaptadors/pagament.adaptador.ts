@@ -13,6 +13,7 @@ export const adaptarPagamentApi = (apiResponse: PaymentApiResponse): Pagament =>
     data: new Date(timestamp),
     metodePagament: paymentMethod,
     comentari: comment,
+    notes: []
   }
 }
 

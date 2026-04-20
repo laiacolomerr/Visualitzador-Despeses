@@ -40,6 +40,32 @@ export class DestacatsService {
     return this.pagamentsDestacats().find(p => p.id === paymentId);
   }
 
+  afegirNota(elementId: string, nota: string): void {
+    this.pagamentsDestacats.update(payments =>
+      payments.map(p => {
+        if (p.id === elementId) {
+          return { ...p, notes: [...p.notes, nota] };
+        }
+        return p;
+      })
+    );
+    this.desarDestacats();
+  }
+
+  eliminarNota(elementId: string, indexNota: number): void {
+    this.pagamentsDestacats.update(payments =>
+      payments.map(p => {
+        if (p.id === elementId) {
+          const notesActualitzades = [...p.notes];
+          notesActualitzades.splice(indexNota, 1);
+          return { ...p, notes: notesActualitzades };
+        }
+        return p;
+      })
+    );
+    this.desarDestacats();
+  }
+
   private desarDestacats(): void {
     localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(this.pagamentsDestacats()));
   }
