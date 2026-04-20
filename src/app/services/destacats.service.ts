@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 
 import { Pagament } from '../models/pagament.model';
 
@@ -8,6 +8,9 @@ import { Pagament } from '../models/pagament.model';
 export class DestacatsService {
   private readonly LOCAL_STORAGE_KEY = 'pagaments-destacats';
   private readonly pagamentsDestacats = signal<Pagament[]>([]);
+  
+  readonly destacats = this.pagamentsDestacats.asReadonly();
+  readonly totalDestacats = computed(() => this.destacats().length);
 
   constructor() {
     this.carregarDestacats();
