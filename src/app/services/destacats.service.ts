@@ -43,10 +43,10 @@ export class DestacatsService {
     return this.pagamentsDestacats().find(p => p.id === paymentId);
   }
 
-  afegirNota(elementId: string, nota: string): void {
+  afegirNota(paymentId: string, nota: string): void {
     this.pagamentsDestacats.update(payments =>
       payments.map(p => {
-        if (p.id === elementId) {
+        if (p.id === paymentId) {
           return { ...p, notes: [...p.notes, nota] };
         }
         return p;
@@ -55,10 +55,10 @@ export class DestacatsService {
     this.desarDestacats();
   }
 
-  eliminarNota(elementId: string, indexNota: number): void {
+  eliminarNota(paymentId: string, indexNota: number): void {
     this.pagamentsDestacats.update(payments =>
       payments.map(p => {
-        if (p.id === elementId) {
+        if (p.id === paymentId) {
           const notesActualitzades = [...p.notes];
           notesActualitzades.splice(indexNota, 1);
           return { ...p, notes: notesActualitzades };
