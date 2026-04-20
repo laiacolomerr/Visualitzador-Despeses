@@ -36,6 +36,10 @@ export class DestacatsService {
     return this.pagamentsDestacats().some(p => p.id === id);
   }
 
+  obtenirDestacat(paymentId: string): Pagament | undefined {
+    return this.pagamentsDestacats().find(p => p.id === paymentId);
+  }
+
   private desarDestacats(): void {
     localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(this.pagamentsDestacats()));
   }
