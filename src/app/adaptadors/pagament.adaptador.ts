@@ -2,7 +2,7 @@ import { PaymentApiResponse } from '../models/payment-api-response.model';
 import { Pagament } from '../models/pagament.model';
 
 export const adaptarPagamentApi = (apiResponse: PaymentApiResponse): Pagament => {
-  const { id, name, category, amount, icon, isRecurring, timestamp, paymentMethod, notes } = apiResponse;
+  const { id, name, category, amount, icon, isRecurring, timestamp, paymentMethod, comment } = apiResponse;
   return {
     id: id,
     nom: name,
@@ -12,7 +12,7 @@ export const adaptarPagamentApi = (apiResponse: PaymentApiResponse): Pagament =>
     esRecurrent: isRecurring,
     data: new Date(timestamp),
     metodePagament: paymentMethod,
-    notes,
+    comentari: comment,
   }
 }
 

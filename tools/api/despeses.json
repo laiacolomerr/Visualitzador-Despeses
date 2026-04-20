@@ -49,7 +49,7 @@
       "isRecurring": false,
       "timestamp": 1763164800000,
       "paymentMethod": "debitCard",
-      "notes": "Primer semestre"
+      "comment": "Primer semestre"
     },
     {
       "id": 6,
@@ -90,7 +90,7 @@
       "isRecurring": true,
       "timestamp": 1756512000000,
       "paymentMethod": "bankTransfer",
-      "notes": "Inclou revisió de la caldera"
+      "comment": "Inclou revisió de la caldera"
     },
     {
       "id": 10,
@@ -101,7 +101,7 @@
       "isRecurring": false,
       "timestamp": 1754870400000,
       "paymentMethod": "cash",
-      "notes": "Pantalons i camisa tardor"
+      "comment": "Pantalons i camisa tardor"
     }
   ]
 }

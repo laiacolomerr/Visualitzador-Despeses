@@ -9,5 +9,5 @@ export interface PaymentApiResponse {
   isRecurring: boolean;
   timestamp: number;
   paymentMethod: PaymentMethod;
-  notes?: string;
+  comment?: string;
 }
