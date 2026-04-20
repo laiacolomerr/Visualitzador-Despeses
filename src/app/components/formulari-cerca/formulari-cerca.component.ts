@@ -91,14 +91,7 @@ export class FormulariCercaComponent {
 
         if (!text) {
           this.pagamentService.obtenirRecurrents();
-        }
-      });
-
-    this.termeControl?.statusChanges
-      .subscribe((status) => {
-        const text = this.termeControl?.value?.trim() ?? '';
-
-        if (text && status === 'VALID') {
+        } else if(text.length >= 2) {
           this.search();
         }
       });
