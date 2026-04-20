@@ -53,7 +53,6 @@
       }
 
       >.input-container {
-        align-items: center;
         display: flex;
         flex-direction: row;
         gap: 0.25rem;
@@ -96,6 +95,10 @@
           >.error {
             color: #cc0000;
           }
+        }
+
+        button {
+          align-self: top;
         }
 
       }
