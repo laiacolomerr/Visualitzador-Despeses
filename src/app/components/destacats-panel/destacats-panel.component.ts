@@ -60,16 +60,18 @@ export class DestacatsPanelComponent {
   }
 
   getNoteValidatorError(index: number) {
-    return this.getNoteIndex(index).invalid;
+    return this.getNoteIndex(index).touched &&
+           this.getNoteIndex(index).invalid;
   }
 
   onAddHighlighted(): void {
-    this.notes.push(this.fb.control('', [Validators.minLength(3)]));
+    this.notes.push(this.fb.control('', [Validators.required, Validators.minLength(3)]));
   }
 
   addNote(payment: Pagament, paymentIdx: number): void {
     const paymentControl = this.notes.at(paymentIdx);
 
+    paymentControl.markAsTouched();
     if (paymentControl.valid) {
       const nota = paymentControl.value;
       this.destacatsService.afegirNota(payment.id, nota);
