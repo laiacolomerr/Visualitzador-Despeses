@@ -45,6 +45,15 @@ export class PagamentService {
     return this.http.get<PaymentApiResponse[]>(url);
   }
 
+  getAll() {
+    const url = `${ this.baseUrl }`;
+    return this.http.get<PaymentApiResponse[]>(url)
+      .pipe(
+        map(adaptarPagamentsApi),
+        finalize(() => this.loading.set(false))
+      )
+  }
+
   private carregarPagaments(url: string): void {
     this.loading.set(true);
     this.error.set(null);
