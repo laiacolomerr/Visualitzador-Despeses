@@ -1,0 +1,16 @@
+@if(loading()) {
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+    <span>Carregant...</span>
+  </div>
+} @else if (error()) {
+  <div class="error-container">
+    <div class="text-container">
+      <span class="title">Error al carregar els pagaments</span>
+      <span>{{ error() }}</span>
+    </div>
+    
+  </div>
+} @else {
+  <targeta-element [payment]="payment()!"></targeta-element>
+}
