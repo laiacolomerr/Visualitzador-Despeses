@@ -2,7 +2,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, finalize, map, Observable, of } from 'rxjs';
 
-import { adaptarPagamentsApi } from '../adaptadors/pagament.adaptador';
+import { adaptarPagamentApi, adaptarPagamentsApi } from '../adaptadors/pagament.adaptador';
 import { environment } from '../../environments/environment';
 import { Pagament } from '../models/pagament.model';
 import { PaymentApiResponse } from '../models/payment-api-response.model';
@@ -46,11 +46,18 @@ export class PagamentService {
   }
 
   getAll() {
-    const url = `${ this.baseUrl }`;
+    const url = this.baseUrl;
     return this.http.get<PaymentApiResponse[]>(url)
       .pipe(
-        map(adaptarPagamentsApi),
-        finalize(() => this.loading.set(false))
+        map(adaptarPagamentsApi)
+      )
+  }
+
+  getById(paymentId: number): Observable<Pagament|undefined> {
+    const url = `${ this.baseUrl }/${ paymentId }`;
+    return this.http.get<PaymentApiResponse>(url)
+      .pipe(
+        map(adaptarPagamentApi),
       )
   }
 
