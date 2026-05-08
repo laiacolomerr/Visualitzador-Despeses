@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 import { Pagament } from '../../models/pagament.model';
 import { TargetaElementComponent } from "../targeta-element/targeta-element.component";
@@ -17,5 +18,11 @@ import { TargetaElementComponent } from "../targeta-element/targeta-element.comp
 export class LlistaElementsComponent {
   @Input() payments: Pagament[] = [];
 
+  private routes = inject(Router);
+
   trackById(_i: number, payment: Pagament) { return payment.id; }
+
+  onClick({ id }: Pagament) {
+    this.routes.navigate([`detall/${ id }`]);
+  }
 }
