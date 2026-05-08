@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-
-import { PagamentPageComponent } from "./pages/pagament-page/pagament-page.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    PagamentPageComponent
+    RouterModule,
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
