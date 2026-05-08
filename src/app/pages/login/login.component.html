@@ -1,0 +1,50 @@
+<form
+  [formGroup]="loginFormulary"
+  (ngSubmit)="login()">
+  <div class="field-group">
+    <div class="field">
+      <label for="name">Correu</label>
+
+      <input
+        type="text"
+        formControlName="email"
+        placeholder="Correu"
+        autocomplete="off"
+        class="form-input"
+      />
+
+      @if(invalid('email')) {
+        <div class="error">{{ errorMessage('email') }}</div>
+      }
+    </div>
+  </div>
+
+  <div class="field-group">
+    <div class="field">
+      <label for="name">Contrasenya</label>
+
+      <input
+        type="text"
+        formControlName="password"
+        placeholder="Contrasenya"
+        autocomplete="off"
+        class="form-input"
+      />
+
+      @if(invalid('password')) {
+        <div class="error">{{ errorMessage('password') }}</div>
+      }
+    </div>
+  </div>
+  <div class="buttons">
+    <button
+      type="submit"
+      [disabled]="loginFormulary.invalid">
+      Entrar
+    </button>
+
+    @if(wrongCredentials()) {
+      <div class="error">Credencials incorrectes</div>
+    } 
+  </div>
+</form>
