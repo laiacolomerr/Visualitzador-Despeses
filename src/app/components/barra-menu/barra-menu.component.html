@@ -2,4 +2,11 @@
   <a routerLink="/pagaments" routerLinkActive="active">Pagaments</a>
   <a routerLink="/cerca" routerLinkActive="active">Cerca</a>
   <a routerLink="/destacats" routerLinkActive="active">Preferits</a>
+  @if(authService.estaAutenticat()) {
+    <a (click)="authService.logout()">Tanca sessió</a>
+    <span class="user-name">|</span>
+    <span class="user-name">{{ ( authService.obtenirUsuari() | async)?.nom }}</span>
+  } @else {
+    <a routerLink="/login" routerLinkActive="active">Login</a>
+  }
 </nav>

@@ -20,7 +20,7 @@ export class LoginComponent {
 
   private readonly fb = inject(FormBuilder);
   private readonly authService = inject(AuthService);
-   private routes = inject(Router);
+  private routes = inject(Router);
 
   constructor() {
     this.loginFormulary = this.fb.group({
