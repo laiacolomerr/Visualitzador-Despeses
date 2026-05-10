@@ -13,7 +13,7 @@ export const routes: Routes = [
   {
     path: 'destacats',
     loadComponent: () =>
-      import('./pages/llista-pagaments-cerca/llista-pagaments-cerca.component').then(m => m.LlistaPagamentsCercaComponent),
+      import('./pages/pagament-page/pagament-page.component').then(m => m.PagamentPageComponent),
     canActivate: [ authGuard ]
   },
   { path: 'detall/:id', component: PagamentComponent, title: 'Detall del pagament' },
