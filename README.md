@@ -1,31 +1,51 @@
-# IocAngularVisualitzadorDespesesLaiaColomer
+# Visualitzador de despeses
+Aquesta aplicació està dissenyada per guardar i visualitzar les despeses personals.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+L'objectiu és portar un control d'aquestes despeses, de manera que es pugui planejar millor l'estalvi, així com les possibles despeses futures.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Mapa de rutes
 
-## Code scaffolding
+| Path          | Component                     | Accés  |
+| ------------- | ----------------------------- | ------ |
+| `pagaments`   | LlistaPagamentsComponent      | públic |
+| `cerca`       | LlistaPagamentsCercaComponent | públic |
+| `destacats`   | PagamentPageComponent         | privat |
+| `detall/:id`  | PagamentComponent             | públic |
+| `login`       | LoginComponent                | públic |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+# Instruccions d'execució en local
+Clonar el projecte al nostre ordinador:
+```bash
+git clone https://github.com/laiacolomerr/Visualitzador-Despeses.git
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Accedir al projecte:
+```bash
+cd Visualitzador-Despeses
+```
 
-## Running unit tests
+Instal·lar les dependències del projecte:
+```bash
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Executar el projecte en local, per accedir-hi s'ha d'introduir la URL `http://localhost:4200`al navegador.
+```bash
+ng serve
+```
 
-## Running end-to-end tests
+# Build de producció
+Per generar el build de producció cal executar la següent comanda:
+```bash
+ng build
+```
+La mida total dels fitxers generats és aproximadament de 631.28 kB.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Credencials de prova
+Per accedir a la secció protegida cal introduir les següents credencials:
 
-## Further help
+- email: admin@test.com
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-## JSON Server
-
-Run `json-server --watch tools/api/despeses.json --port 4301` to execute `json-server` with test data.
+- contrasenya: 1234
