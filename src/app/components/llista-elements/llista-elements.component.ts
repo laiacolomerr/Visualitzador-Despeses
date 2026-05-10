@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { Pagament } from '../../models/pagament.model';
 import { TargetaElementComponent } from "../targeta-element/targeta-element.component";
@@ -10,7 +11,8 @@ import { TargetaElementComponent } from "../targeta-element/targeta-element.comp
   standalone: true,
   imports: [
     CommonModule,
-    TargetaElementComponent
+    ScrollingModule,
+    TargetaElementComponent,
   ],
   templateUrl: './llista-elements.component.html',
   styleUrl: './llista-elements.component.scss',

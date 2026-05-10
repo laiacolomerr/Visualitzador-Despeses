@@ -1,14 +1,14 @@
-<div
-  *ngIf="payments.length === 0; else paymentsGrid"
-  class="empty-list">
+<div *ngIf="payments.length === 0; else paymentsGrid" class="empty-list">
   <span class="title">Error</span>
   <span>No s'ha trobat cap resultat coincident amb la cerca.</span>
 </div>
 <ng-template #paymentsGrid>
-  <div *ngFor="let payment of payments; trackBy: trackById" class="payment">
-    <targeta-element
-      [payment]="payment"
-      (click)="onClick(payment)">
-    </targeta-element>
-  </div>
+  <cdk-virtual-scroll-viewport [itemSize]="230" class="list">
+    <div *cdkVirtualFor="let payment of payments; trackBy: trackById">
+      <targeta-element
+        [payment]="payment"
+        (click)="onClick(payment)">
+      </targeta-element>
+    </div>
+  </cdk-virtual-scroll-viewport>
 </ng-template>
