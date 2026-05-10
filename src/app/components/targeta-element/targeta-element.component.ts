@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatButtonModule } from '@angular/material/button'; 
@@ -19,7 +19,8 @@ import { PaymentMethod } from '../../models/payment-method.type';
     MatIconModule,
   ],
   templateUrl: './targeta-element.component.html',
-  styleUrl: './targeta-element.component.scss'
+  styleUrl: './targeta-element.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TargetaElementComponent {
   @Input() payment!: Pagament;

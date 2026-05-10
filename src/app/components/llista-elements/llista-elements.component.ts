@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,8 @@ import { TargetaElementComponent } from "../targeta-element/targeta-element.comp
     TargetaElementComponent
   ],
   templateUrl: './llista-elements.component.html',
-  styleUrl: './llista-elements.component.scss'
+  styleUrl: './llista-elements.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LlistaElementsComponent {
   @Input() payments: Pagament[] = [];
